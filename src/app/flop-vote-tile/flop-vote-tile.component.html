@@ -1,0 +1,7 @@
+<div style="margin:15px;">
+    <h2>{{movie.title}} ({{movie.year}})</h2>
+    <h3 [hidden]="!movie.voted">Escolhido!</h3>
+    <div>
+        <img [src]="movie.posterUrl" [alt]="movie.title">
+    </div>
+</div>
