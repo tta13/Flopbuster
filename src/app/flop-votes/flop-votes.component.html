@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+
+<table>
+  <tr>
+    <td *ngFor="let movie of retrieveMovieList()" name="movies">
+      <div style="margin:15px;">
+        <h2>{{movie.title}}</h2>
+        <h3 [hidden]="!movie.voted">Escolhido!</h3>
+        <div>
+          <img [src]="movie.posterUrl" [alt]="movie.title">
+          <div>
+            <button (click)="chooseMovie($event, movie)" [disabled]="choseMovie() && !movie.voted">Vote</button>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
