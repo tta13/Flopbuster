@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-flop-vote-tile',
@@ -8,10 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FlopVoteTileComponent implements OnInit {
 
   @Input() movie;
+  @Input() choseMovie;
+  @Output() onVoteMovie = new EventEmitter(); 
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onVoteButtonClicked(event) {
+    this.onVoteMovie.emit({event: event, movie: this.movie})
   }
 
 }

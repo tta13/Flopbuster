@@ -20,8 +20,8 @@ export class FlopVotesComponent implements OnInit {
 
   choseMovie(): boolean { return this.flopVoteService.choseMovie; }
 
-  chooseMovie(event, movie){
-    this.flopVoteService.chooseMovie(event, movie);
+  chooseMovie(event){
+    this.flopVoteService.chooseMovie(event.event, event.movie);
   }
 
 }

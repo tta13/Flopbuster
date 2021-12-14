@@ -3,5 +3,8 @@
     <h3 [hidden]="!movie.voted">Escolhido!</h3>
     <div>
         <img [src]="movie.posterUrl" [alt]="movie.title">
+        <div> 
+            <button (click)="onVoteButtonClicked($event)" [disabled]="choseMovie && !movie.voted">Vote</button>
+        </div>       
     </div>
 </div>

@@ -3,10 +3,8 @@
 <table>
   <tr>
     <td *ngFor="let movie of retrieveMovieList()" name="movies">
-      <app-flop-vote-tile [movie]="movie"></app-flop-vote-tile>
-      <div>
-        <button (click)="chooseMovie($event, movie)" [disabled]="choseMovie() && !movie.voted">Vote</button>
-      </div>
+      <app-flop-vote-tile [movie]="movie" [choseMovie]="choseMovie()"
+        (onVoteMovie)="chooseMovie($event)"></app-flop-vote-tile>
     </td>
   </tr>
 </table>
